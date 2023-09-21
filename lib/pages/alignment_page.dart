@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cross_and_main_axis/controller/alignment_controller.dart';
 import 'package:get/get.dart';
 
-class AlignmentPage extends StatelessWidget {
+class AlignmentPage extends StatefulWidget {
+  @override
+  State<AlignmentPage> createState() => _AlignmentPageState();
+}
+
+class _AlignmentPageState extends State<AlignmentPage> {
   final controller = Get.put(AlignmentController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Alignment Widget'),
+        automaticallyImplyLeading: false,
       ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,5 +137,11 @@ class AlignmentPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    Get.delete<AlignmentController>();
+    super.dispose();
   }
 }

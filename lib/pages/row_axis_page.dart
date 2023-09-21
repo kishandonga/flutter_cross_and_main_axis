@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cross_and_main_axis/controller/axis_controller.dart';
 import 'package:get/get.dart';
 
-class RowAxisPage extends StatelessWidget {
+class RowAxisPage extends StatefulWidget {
+  @override
+  State<RowAxisPage> createState() => _RowAxisPageState();
+}
+
+class _RowAxisPageState extends State<RowAxisPage> {
   final controller = Get.put(AxisController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Row Axis'),
+        automaticallyImplyLeading: false,
       ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +38,7 @@ class RowAxisPage extends StatelessWidget {
                           ),
                           Text(
                             'Horizontal Axis',
-                            style: Get.textTheme.headlineSmall,
+                            style: Theme.of(context).textTheme.headlineSmall,
                           ),
                         ],
                       ),
@@ -54,11 +60,6 @@ class RowAxisPage extends StatelessWidget {
                             controller.mainAxis = value!;
                           },
                           value: controller.mainAxis,
-                          style: TextStyle(
-                            inherit: false,
-                            color: Colors.black,
-                            decorationColor: Colors.white,
-                          ),
                         ),
                       ),
                       SizedBox(
@@ -71,7 +72,7 @@ class RowAxisPage extends StatelessWidget {
                           ),
                           Text(
                             'Vertical Axis',
-                            style: Get.textTheme.headlineSmall,
+                            style: Theme.of(context).textTheme.headlineSmall,
                           ),
                         ],
                       ),
@@ -93,11 +94,6 @@ class RowAxisPage extends StatelessWidget {
                             controller.crossAxis = value!;
                           },
                           value: controller.crossAxis,
-                          style: TextStyle(
-                            inherit: false,
-                            color: Colors.black,
-                            decorationColor: Colors.white,
-                          ),
                         ),
                       )
                     ],
@@ -111,12 +107,14 @@ class RowAxisPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
+                height: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(),
                 ),
                 child: Obx(
                   () => Row(
                     textBaseline: TextBaseline.alphabetic,
+                    mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: controller.mainAxis,
                     crossAxisAlignment: controller.crossAxis,
                     children: controller.colors
@@ -134,5 +132,11 @@ class RowAxisPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    Get.delete<AxisController>();
+    super.dispose();
   }
 }

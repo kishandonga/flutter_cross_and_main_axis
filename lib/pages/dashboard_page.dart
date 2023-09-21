@@ -1,13 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cross_and_main_axis/controller/dashboard_controller.dart';
 import 'package:flutter_cross_and_main_axis/routes.dart';
 import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+class DashboardPage extends StatelessWidget {
+  final controller = Get.find<DashboardController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Flutter Axis And Alignments'),
+        actions: [
+          InkWell(
+            onTap: () async {
+              await controller.changeTheme();
+            },
+            child: Obx(
+              () => Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Icon(
+                  controller.themeType == 'Light'
+                      ? Icons.brightness_4
+                      : Icons.brightness_2,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 16,
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -18,7 +41,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(Routes.columnAxisPage);
+                  Navigator.pushNamed(context, Routes.columnAxisPage);
                 },
                 child: Text('Column Axis'),
               ),
@@ -27,7 +50,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(Routes.rowAxisPage);
+                  Navigator.pushNamed(context, Routes.rowAxisPage);
                 },
                 child: Text('Row Axis'),
               ),
@@ -36,7 +59,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(Routes.alignmentPage);
+                  Navigator.pushNamed(context, Routes.alignmentPage);
                 },
                 child: Text('Alignments'),
               ),
