@@ -2,6 +2,22 @@
 
 A new Flutter project.
 
+## Release 
+
+Add below line in the index.html
+
+<base href="$FLUTTER_BASE_HREF">
+
+Execute this command 
+
+flutter build web --release --base-href /flutter_cross_and_main_axis/
+
+Execute this command
+
+sudo sh release.sh
+
+push to GitHub
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
