@@ -1,32 +1,59 @@
-# flutter_cross_and_main_axis
+# Flutter Cross And Main Axis + Alignment
 
-A new Flutter project.
+A flutter project to demonstrate how column and row cross and main axis works, how layout set based on the cross and main axis values also added animated alignment sample.
 
-## Release 
+## Reference Screens
 
-Add below line in the index.html
+![](resources/1.png)
+<br>
+<br>
+![](resources/2.png)
+<br>
+<br>
+![](resources/3.png)
+<br>
+<br>
+![](resources/4.png)
+<br>
+<br>
 
-<base href="$FLUTTER_BASE_HREF">
+## Build & Release
 
-Execute this command 
+- Add below line in the index.html
 
+<pre>
+&lt;base href=&quot;$FLUTTER_BASE_HREF&quot;&gt;
+</pre>
+
+- Execute this command 
+
+<pre>
 flutter build web --release --base-href /flutter_cross_and_main_axis/
+</pre>
 
-Execute this command
+- Execute this command
 
+<pre>
 sudo sh release.sh
+</pre>
 
-push to GitHub
+- Push to GitHub and setup pages for main branch
 
-## Getting Started
+### About me
 
-This project is a starting point for a Flutter application.
+I'm Kishan Donga and you can connect with me via the below links, I am a developer and I love to create innovations.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p>
+    <a href="mailto:kishandonga.92@gmail.com">
+        <img src="https://img.shields.io/badge/e‑mail-D14836.svg?style=for-the-badge&logo=GMail&logoColor=white" />
+    </a>
+    <a href="https://www.linkedin.com/in/ikd96/">
+        <img src="https://img.shields.io/badge/linkedin-0077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+    </a>
+    <a href="https://twitter.com/ikishan96">
+        <img src="https://img.shields.io/badge/twitter-1DA1F2.svg?style=for-the-badge&logo=twitter&logoColor=white" />
+    </a>
+    <a href="https://www.instagram.com/ikishan96/">
+        <img src="https://img.shields.io/badge/instagram-E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white" />
+    </a>
+</p>
